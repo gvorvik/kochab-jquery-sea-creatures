@@ -6,11 +6,22 @@
     //cd in to the folder you just created
     //run git init to create a git repo(.git) 
     //run git add and git commit
-    //run git remote add origin(new name for the url of the repo) <name of place where the repo is going>
     //create an EMPTY (no ReadMe) folder on github where the folder will be pushed to
+    //run git remote add origin(new name for the url of the repo) <name of place where the repo is going>
+        //e.g. git remote add origin https://github.com/gvorvik/sample-project
+    //git remote -v shows where the folder is pointing to on github (for pushing and fetching)
+    //git push -u origin master
 
-console.log('In script.js');
+$(document).ready(onReady);
+let counter = 0;  
 
-$(document).ready(function() {
-    console.log('Jquery is working');
-});
+function onReady() {
+    $('body').append(`<button>Click Me</button>`);
+    $('body').append(`<h3 id='buttonCounter'>The button has been clicked ${counter} times</h3>`);
+    $('button').on('click', clickHandler);
+}
+
+function clickHandler() {  
+    counter ++;
+    $('#buttonCounter').text(`The button has been clicked ${counter} times`);
+}
