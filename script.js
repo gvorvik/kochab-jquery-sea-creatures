@@ -16,12 +16,21 @@ $(document).ready(onReady);
 let counter = 0;  
 
 function onReady() {
-    $('body').append(`<button>Click Me</button>`);
+    $('body').append(`<button class="block" id='countingButton'>Click Me</button>`);
     $('body').append(`<h3 id='buttonCounter'>The button has been clicked ${counter} times</h3>`);
-    $('button').on('click', clickHandler);
+    $('#countingButton').on('click', clickHandler);
+    $('#submitButton').on('click', addNewCreature);
 }
 
 function clickHandler() {  
     counter ++;
     $('#buttonCounter').text(`The button has been clicked ${counter} times`);
+}
+
+function addNewCreature() {
+    let name = $('#creatureNameInput').val();
+    let size = $('#creatureSizeInput').val();
+    let speed = $('#creatureSpeedInput').val();
+    let weight = $('#creatureWeightInput').val();
+    $("#tableBody").prepend(`<tr><td>${name}</td><td>${size}</td><td>${speed}</td><td>${weight} pounds</td></tr>`);  
 }

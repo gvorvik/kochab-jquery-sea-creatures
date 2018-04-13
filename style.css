@@ -1,3 +1,18 @@
 body {
     color: slateblue;
 }
+
+.block {
+    display: block;
+    margin-top: 30px;
+}
+
+td {
+    text-align: center;
+}
+
+td, th {
+    padding: 10px;
+    border: 1px solid black;
+    border-spacing: 0;
+}
