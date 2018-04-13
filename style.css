@@ -14,5 +14,8 @@ td {
 td, th {
     padding: 10px;
     border: 1px solid black;
-    border-spacing: 0;
+}
+
+table {
+    padding-top: 20px;
 }

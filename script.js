@@ -12,6 +12,8 @@
     //git remote -v shows where the folder is pointing to on github (for pushing and fetching)
     //git push -u origin master
 
+//option + click creates another cursor, so you can type same thing in multiple places
+
 $(document).ready(onReady);
 let counter = 0;  
 
@@ -28,9 +30,18 @@ function clickHandler() {
 }
 
 function addNewCreature() {
-    let name = $('#creatureNameInput').val();
-    let size = $('#creatureSizeInput').val();
-    let speed = $('#creatureSpeedInput').val();
-    let weight = $('#creatureWeightInput').val();
-    $("#tableBody").prepend(`<tr><td>${name}</td><td>${size}</td><td>${speed}</td><td>${weight} pounds</td></tr>`);  
+    let name = $('#creatureNameInput');
+    let size = $('#creatureSizeInput');
+    let speed = $('#creatureSpeedInput');
+    let weight = $('#creatureWeightInput');
+    $("#tableBody").prepend(`<tr>
+        <td>${name.val()}</td>
+        <td>${size.val()}</td>
+        <td>${speed.val()} MPH</td>
+        <td>${weight.val()} pounds</td>
+        </tr>`);
+    name.val('');
+    size.val('');
+    speed.val('');
+    weight.val('');
 }
